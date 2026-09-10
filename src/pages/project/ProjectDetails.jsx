@@ -2,9 +2,10 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { projects } from "../../data/projects";
+import DemoPreview from "../../components/demo/DemoPreview";
 import styles from "./projectDetails.module.scss";
 
-const ProjectPage = () => {
+const ProjectDetails = () => {
   const { id } = useParams();
   const [activeDemo, setActiveDemo] = useState(null);
 
@@ -97,15 +98,7 @@ const ProjectPage = () => {
                     onClick={() => setActiveDemo(demo)}
                     type="button"
                   >
-                    <video
-                      src={demo.preview}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      loading="lazy"
-                      preload="metadata"
-                    />
+                    <DemoPreview demo={demo} />
 
                     <div className={styles.demoLabel}>
                       <h3>{demo.title}</h3>
@@ -150,4 +143,4 @@ const ProjectPage = () => {
   );
 };
 
-export default ProjectPage;
+export default ProjectDetails;
