@@ -115,19 +115,16 @@
   padding: 1.6rem;
 }
 
-/* Full-width opening project */
 .featuredLayout > :nth-child(1) {
   grid-column: 1 / -1;
   grid-row: 1 / span 2;
 }
 
-/* Main internship/flagship project */
 .featuredLayout > :nth-child(2) {
   grid-column: 1 / span 3;
   grid-row: 3 / span 2;
 }
 
-/* Supporting project */
 .featuredLayout > :nth-child(3) {
   grid-column: 4 / -1;
   grid-row: 3 / span 2;
