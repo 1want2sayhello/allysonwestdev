@@ -22,6 +22,8 @@ const MobileNav = ({ socials }) => {
       document.body.style.position = "";
       document.body.style.top = "";
       document.body.style.width = "";
+
+      window.scrollTo(0, scrollYRef.current);
     };
   }, [isOpen]);
 
@@ -35,12 +37,18 @@ const MobileNav = ({ socials }) => {
 
   const handleNavClick = (id) => () => {
     setIsOpen(false);
-    navigate(`/#${id}`, { replace: true });
+    navigate(`/#${id}`);
 
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    });
+
+      if (el) {
+        el.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 100);
   };
 
   return (
@@ -70,26 +78,30 @@ const MobileNav = ({ socials }) => {
               Home
             </NavLink>
           </div>
+
           <div className={styles.linkBtn}>
             <button type="button" onClick={handleNavClick("featured")}>
               Work
             </button>
           </div>
+
           <div className={styles.linkBtn}>
             <button type="button" onClick={handleNavClick("about")}>
               About
             </button>
           </div>
+
           <div className={styles.linkBtn}>
             <button type="button" onClick={handleNavClick("contact")}>
               Contact
             </button>
           </div>
+
           <div className={styles.socials}>
             {socials.map((social) => (
               <a
                 className={styles.icon}
-                key={socials}
+                key={social}
                 href={SOCIAL_URLS[social]}
                 target="_blank"
                 rel="noreferrer"
