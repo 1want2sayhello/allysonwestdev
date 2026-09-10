@@ -103,6 +103,7 @@ const ProjectPage = () => {
                       muted
                       loop
                       playsInline
+                      loading="lazy"
                       preload="metadata"
                     />
 
