@@ -117,7 +117,7 @@ const ProjectPage = () => {
 
               <div className={styles.context}>
                 <h3>Results</h3>
-                {project.results.map((result, index) => (
+                {projects.results.map((result, index) => (
                   <p key={index}>{result}</p>
                 ))}
               </div>
