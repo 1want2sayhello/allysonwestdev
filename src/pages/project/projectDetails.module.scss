@@ -45,8 +45,8 @@
 
 .header {
   position: absolute;
-  min-width: 520px;
-  height: 120px;
+  width: min(75%, 900px);
+  min-height: 120px;
   background-color: $bg;
   z-index: 12;
   bottom: -50px;
@@ -59,10 +59,13 @@
 }
 
 .header h2 {
-  font-size: clamp(1.2rem, 4vw, 6rem);
+  font-size: clamp(1.4rem, 4vw, 6rem);
   color: $highlight;
   margin-top: auto;
   text-transform: uppercase;
+  text-wrap: balance;
+  text-align: left;
+  padding: 0.2rem;
 }
 
 .content {
@@ -86,6 +89,8 @@
   padding: 2rem;
   gap: 2.2rem;
   background-color: $bg;
+  text-transform: capitalize;
+  text-wrap: balance;
 }
 
 .vertical p {
@@ -360,6 +365,21 @@
 ============================= */
 
 @media (max-width: 780px) {
+  .header {
+    width: calc(100% - 2rem);
+    min-height: 90px;
+    height: auto;
+    left: 1rem;
+    bottom: -40px;
+    padding: 0.8rem;
+  }
+
+  .header h2 {
+    font-size: clamp(1.35rem, 6vw, 2rem);
+    line-height: 1.05;
+    text-align: left;
+    overflow-wrap: break-word;
+  }
   .content {
     grid-template-columns: 1fr;
   }
@@ -381,6 +401,23 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: start;
+  }
+
+  .liveUrl {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: underline;
+  }
+
+  .liveUrl p {
+    display: none;
+  }
+
+  .liveUrl h3 {
+    margin: 0;
   }
 
   .context p {

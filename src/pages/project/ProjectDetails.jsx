@@ -46,15 +46,15 @@ const ProjectPage = () => {
                 <h3> Web App (Optimized for Mobile) </h3>
               </div>
 
-              <div>
-                <p> Live Link </p>
+              <div className={styles.liveUrl}>
+                <p> Live URL</p>
                 <h3>
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {project.title} link
+                    Visit {project.title}
                   </a>
                 </h3>
               </div>
