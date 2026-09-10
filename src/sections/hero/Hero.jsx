@@ -139,9 +139,10 @@ const Hero = () => {
         <div className={styles.projectHeading}>
           <h1> Building With Intention </h1>
           <h4>
-            From real-world internship work to personal projects, every project
-            reflects the same idea: <br /> build intentionally, design with
-            purpose, and create experiences people enjoy using.
+            From real-world client work to personal builds, I approach every
+            project with the same mindset: <br /> thoughtful design, solid
+            functionality, and attention to detail that shape overall user
+            experience.
           </h4>
         </div>
       </div>

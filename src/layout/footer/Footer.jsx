@@ -31,7 +31,7 @@ const Footer = () => {
           <div className={styles.border}></div>
           <div className={styles.navSection}>
             <Link to={"projects/tech-tunes"}> Tech Tunes </Link>
-            <Link to={"projects/map-app"}> Interactive Map App</Link>
+            <Link to={"projects/experience-indy"}> Interactive Map App </Link>
             <Link to={"projects/fizz-fix"}> Fizz Fix </Link>
           </div>
         </nav>
