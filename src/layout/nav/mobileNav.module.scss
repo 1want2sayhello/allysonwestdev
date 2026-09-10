@@ -1,0 +1,209 @@
+@use "../../sass/variables" as *;
+
+.mobileNav {
+  position: relative;
+  height: auto;
+  flex: 1;
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+
+  cursor: pointer;
+  z-index: 20;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba($highlight, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.toggleMenu {
+  width: auto;
+  height: 60px;
+  padding: 1.2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.burger {
+  width: 60px;
+  height: 60px;
+
+  background-color: rgba($highlight, 0.045);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: $thin-border;
+
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.patty {
+  width: 75%;
+  height: 2px;
+  background-color: $highlight;
+  border-radius: 2px;
+
+  transition:
+    transform 0.25s,
+    ease opacity 0.2s ease;
+}
+
+.patty:nth-child(1) {
+  margin-top: 5px;
+}
+
+.patty:nth-child(2) {
+  width: 50%;
+}
+
+.patty:nth-child(3) {
+  width: 25%;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  height: 80vh;
+  width: 100%;
+
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg;
+  gap: 1rem;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.menuOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.buttonContainer {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  z-index: 101;
+}
+
+.showCloseBtn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .patty {
+    height: 2px;
+  }
+
+  .patty:nth-child(1) {
+    margin: 0;
+    width: 40%;
+    transform: translateY(8.5px) rotate(45deg);
+  }
+  .patty:nth-child(2) {
+    opacity: 0;
+  }
+  .patty:nth-child(3) {
+    width: 40%;
+    transform: translateY(-8.5px) rotate(-45deg);
+  }
+}
+
+.links {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+.linkBtn {
+  width: 100%;
+  height: 110px;
+
+  border-bottom: $thin-border;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.linkBtn:first-child {
+  border-top: $thin-border;
+}
+
+.linkBtn a {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: $highlight;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials {
+  width: 100%;
+  height: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0 0.4rem;
+
+  margin-top: auto;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform ease-in-out 0.2s;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 540px) {
+  .mobileNav {
+    display: flex;
+  }
+}

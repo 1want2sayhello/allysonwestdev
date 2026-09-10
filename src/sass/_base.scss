@@ -1,0 +1,61 @@
+@use "./variables" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-family:
+    $body-text-font,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $bg;
+
+  font-display: swap;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: $highlight;
+  font-family: $header-font;
+}
+
+section {
+  scroll-margin-top: $nav-height;
+}
+
+a,
+Link {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button {
+  all: unset;
+}
+
+.main-content {
+  min-height: calc(100vh - $nav-height);
+}

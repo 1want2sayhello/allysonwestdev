@@ -1,0 +1,467 @@
+@use "../../sass/variables" as *;
+
+.hero {
+  position: relative;
+  width: 100%;
+  isolation: isolate;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-height: 100vh;
+}
+
+.hero::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  background:
+    radial-gradient(
+      ellipse 32% 48% at 52% 48%,
+      rgba(255, 153, 132, 0.32) 0%,
+      rgba(230, 75, 64, 0.5) 35%,
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 75% 85% at 50% 52%,
+      #c6443c 0%,
+      #8f302c 38%,
+      #461c1a 72%,
+      #271313 100%
+    );
+
+  z-index: -2;
+}
+
+.hero::after {
+  content: "";
+  inset: 0;
+  position: absolute;
+  background-image: url("../../assets/grain-texture.webp");
+
+  background-size: 420px 420px;
+
+  background-repeat: repeat;
+  mix-blend-mode: soft-light;
+  z-index: -1;
+}
+
+.bulbContainer {
+  height: 100%;
+  position: absolute;
+  top: -135px;
+  left: 50%;
+  transform: translate(-47%);
+  width: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.visual {
+  width: 100%;
+  position: relative;
+}
+
+.visual img {
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  display: block;
+}
+
+.bulb {
+  height: 100%;
+  position: relative;
+  top: -35px;
+  left: 42%;
+  transform: translate(-40%);
+  width: 260px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bulb img {
+  display: block;
+  width: clamp(180px, 22vw, 260px);
+  height: 100%;
+  object-fit: contain;
+
+  transform-origin: top center;
+  animation: swing 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.bulb img {
+  animation: swing 2.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.glow {
+  transform-origin: top 10%;
+  animation: swing 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(-14deg);
+  }
+
+  18% {
+    transform: rotate(11deg);
+  }
+
+  35% {
+    transform: rotate(-7deg);
+  }
+
+  52% {
+    transform: rotate(4deg);
+  }
+
+  68% {
+    transform: rotate(-2.2deg);
+  }
+
+  82% {
+    transform: rotate(1deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.glow {
+  position: absolute;
+  width: 520px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  top: 50px;
+}
+
+.glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  background: radial-gradient(
+    circle,
+    rgba($white, 0.8) 0%,
+    rgba($highlight, 0.5) 20%,
+    transparent 70%
+  );
+  opacity: 0.375;
+}
+
+.dust {
+  position: absolute;
+  top: 220px;
+  left: 40px;
+
+  width: 400px;
+  height: 400px;
+
+  pointer-events: none;
+  opacity: 0.875;
+}
+
+.dust span {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+
+  background: rgba($highlight, 0.8);
+  box-shadow: 0 0 2px rgba($highlight, 0.4);
+
+  animation: drift var(--duration) linear infinite;
+  animation-delay: -6s;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+
+  15%,
+  85% {
+    opacity: 0.45;
+  }
+
+  100% {
+    transform: translate(-8px, -55px);
+    opacity: 0;
+  }
+}
+
+.cta {
+  width: 220px;
+  height: 60px;
+  background-color: $bg;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  box-shadow: 4px 6px 0 $highlight;
+  border-radius: 2px;
+  z-index: 10;
+  font-size: 1.4rem;
+  font-family: $header-font;
+  color: $highlight;
+  text-transform: uppercase;
+  font-weight: 900;
+
+  cursor: pointer;
+}
+
+.cta:hover {
+  transform: scale(1.03);
+  background-color: rgba($bg, 0.825);
+}
+
+.banner {
+  width: 100%;
+  height: 380px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  container-type: size;
+  margin-top: 4.4rem;
+  line-height: 1;
+}
+
+.banner .heading,
+.banner .subheading {
+  margin: 0;
+  padding: 0;
+  font-size: calc(100cqi / 9);
+  font-family: $body-text-font;
+  text-transform: uppercase;
+  white-space: nowrap;
+  letter-spacing: -0.175rem;
+
+  word-spacing: -20px;
+  line-height: 0.94;
+}
+
+.banner .heading {
+  color: rgba($highlight, 0.875);
+  text-shadow: 3px 3px 0 rgba($bg, 0.475);
+  z-index: 10;
+}
+
+.banner .subheading {
+  color: $color-accent;
+}
+
+.content {
+  width: 100%;
+  flex: 1;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0 1.2rem;
+}
+
+.text {
+  display: flex;
+  margin-top: 0.4rem;
+}
+
+.text h4 {
+  width: 25ch;
+  text-align: left;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-family: $accent-font;
+  color: rgba($highlight, 0.8);
+  letter-spacing: 0.8px;
+}
+
+.highlight {
+  color: $white;
+  text-shadow: 0 2px 0 $bg;
+}
+
+.techStack {
+  width: 320px;
+  height: 60px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 0.8rem;
+  opacity: 0.575;
+
+  margin-left: auto;
+}
+
+.techStack .label {
+  font-size: 1rem;
+  color: $highlight;
+  font-family: $accent-font;
+}
+
+.techStack .icon {
+  height: 40px;
+  width: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  transition: transform 0.3s ease-in-out opacity 0.3s ease-in-out;
+}
+
+.techStack .icon:hover {
+  transform: scale(1.2);
+  opacity: 0.875;
+  filter: drop-shadow(0 0 16px rgba($highlight, 0.8));
+}
+
+.techStack .icon img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+.projectIntro {
+  height: 250px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  color: $highlight;
+}
+
+.projectHeading {
+  height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projectHeading h1 {
+  font-size: clamp(1.2rem, 4.6vw, 5rem);
+  font-family: $body-text-font;
+  text-transform: uppercase;
+  text-shadow: 4px 4px 0 rgba($color-accent, 0.475);
+  margin-top: auto;
+}
+
+.projectHeading h4 {
+  max-width: 100ch;
+  color: $highlight;
+  font-size: clamp(1rem, 1.6vw, 1.8rem);
+  margin-bottom: 2rem;
+  font-family: $header-font;
+  text-align: center;
+}
+
+/*
+ MOBILE STYLING
+============================= */
+
+@media (max-width: 760px) {
+  .banner {
+    height: 200px;
+  }
+
+  .banner .heading,
+  .banner .subheading {
+    font-size: calc(100cqi / 8.2);
+    font-family: $body-text-font;
+    text-transform: uppercase;
+    white-space: nowrap;
+    letter-spacing: -2px;
+    word-spacing: 0.4px;
+    line-height: 1;
+  }
+
+  .bulbContainer {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .bulb {
+    top: -140px;
+    left: 38%;
+  }
+
+  .glow {
+    width: 240px;
+    top: 200px;
+  }
+
+  .dust {
+    height: 130px;
+    width: 100%;
+    top: 40px;
+    left: 0;
+  }
+
+  .content {
+    margin-top: 4rem;
+    grid-template-columns: 1fr;
+    place-content: center;
+  }
+
+  .text {
+    order: 1;
+  }
+
+  .techStack {
+    order: 2;
+  }
+
+  .action {
+    order: 3;
+  }
+
+  .text {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text h4 {
+    width: 30ch;
+    text-align: center;
+    letter-spacing: 0.8px;
+  }
+
+  .techStack {
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .cta {
+    margin-top: 0.8rem;
+  }
+}

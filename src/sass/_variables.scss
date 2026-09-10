@@ -1,0 +1,36 @@
+/*
+ Color Variables
+============================= */
+
+$bg: #16171d;
+$accent: #992523;
+//$accent: #b52b28;
+$light-accent: #a62e2e;
+$dark-accent: #341418;
+$color-accent: #db4a47;
+$highlight: #eae6dd;
+$white: #f2f2f2;
+
+/*
+  Font Variables
+============================= */
+
+$header-font: "aptos-display", sans-serif;
+//$body-text-font: "acumin-pro", sans-serif;
+
+//$accent-font: "balboa", sans-serif;
+
+$body-text-font: "balboa", sans-serif;
+
+$accent-font: "magistral", sans-serif;
+
+/*
+ Misc
+============================= */
+
+$nav-height: 100px;
+
+$thin-border: 1.8px solid rgba($white, 0.15);
+$thick-border: 8px solid $highlight;
+$med-border: 3px solid $bg;
+$button-border: 2px solid $bg;

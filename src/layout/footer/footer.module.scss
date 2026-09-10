@@ -1,0 +1,253 @@
+@use "../../sass/variables" as *;
+
+.footer {
+  position: relative;
+
+  background: linear-gradient(
+    to bottom,
+    rgba($bg, 1) 0%,
+    rgba(rgb(33, 33, 33), 0.3) 100%
+  );
+
+  width: 100%;
+  min-height: 280px;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-image: url("../../assets/grain-texture.webp");
+  background-size: 180px 180px;
+  background-repeat: repeat;
+
+  z-index: -1;
+}
+
+.footer .logo {
+  width: 100%;
+  padding: 1.2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.3rem 1.8rem;
+  margin: 0.8rem 0;
+}
+
+.copyright,
+.content {
+  width: 95%;
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left,
+.right {
+  height: 100%;
+  width: 420px;
+  margin-top: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  justify-content: left;
+}
+
+.right {
+  justify-content: right;
+}
+
+.socials .icon {
+  width: 35px;
+  height: 35px;
+  opacity: 0.875;
+  margin: 0.2rem;
+
+  transition:
+    0.3s transform ease-in-out,
+    0.3s opacity ease-in-out;
+}
+
+.socials .icon:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.socials .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo {
+  min-height: 140px;
+  height: auto;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 25% 65%;
+  align-items: end;
+
+  padding: 1.2rem;
+}
+
+.footer .nav {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: left;
+  padding-left: 0.2rem;
+
+  color: $highlight;
+  font-family: $header-font;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.nav .border {
+  width: 200px;
+}
+
+.navSection {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.navSection a,
+.navSection button {
+  width: fit-content;
+  cursor: pointer;
+  transition: transform 0.225s ease-in-out;
+}
+
+.navSection a:hover,
+.navSection button:hover {
+  transform: scale(1.115);
+}
+
+.brand {
+  height: 100%;
+  width: clamp(340px, 80vw, 800px);
+  display: flex;
+  justify-content: right;
+}
+
+.brandMark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brandMark img {
+  height: 100%;
+  width: clamp(85px, 20vw, 180px);
+  object-fit: contain;
+}
+
+.logo .name {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-bottom: 0;
+  color: rgba($highlight, 0.8);
+}
+
+.logo .name h1 {
+  font-family: $body-text-font;
+  text-shadow: 3px 6px rgba($bg, 0.4);
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: clamp(2rem, 6vw, 10rem);
+  line-height: 0.8;
+  text-align: right;
+}
+
+.contentContainer {
+  width: 95%;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email {
+  font-family: $body-text-font;
+  color: $highlight;
+  text-decoration: underline;
+}
+.contact,
+.copyright {
+  width: 100%;
+  margin-bottom: 0.2rem;
+}
+
+.border {
+  width: 100%;
+  height: 0.445px;
+  background-color: $highlight;
+}
+
+.navSection {
+  margin: 0.8rem 0;
+}
+.copyright {
+  font-size: 0.675rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.privacy {
+  color: rgba($highlight, 0.8);
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 540px) {
+  .footer .nav {
+    width: 320px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer .nav a,
+  .footer .nav button {
+    width: 100px;
+  }
+
+  .navSection {
+    gap: 0.2rem;
+  }
+
+  .nav .border {
+    width: 80px;
+    transform: rotate(90deg);
+  }
+
+  .logo {
+    flex-direction: column-reverse;
+  }
+
+  .brand {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+}
