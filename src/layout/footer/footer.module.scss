@@ -192,7 +192,6 @@
 .email {
   font-family: $body-text-font;
   color: $highlight;
-  text-decoration: underline;
 }
 .contact,
 .copyright {
@@ -215,7 +214,8 @@
   margin-bottom: 2rem;
 }
 
-.privacy {
+.tag {
+  margin: 2px 5px;
   color: rgba($highlight, 0.8);
   text-decoration: underline;
 }

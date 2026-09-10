@@ -74,7 +74,7 @@ const Contact = () => {
         </section>
         <section className={styles.contactInfo}>
           <div className={styles.actions}>
-            <h3> hello@allysonwest.dev </h3>
+            <a href="mailto:hello@allysonwest.dev"> hello@allysonwest.dev </a>
             <div className={styles.socials}>
               <div className={styles.cta}>
                 <a href={SOCIAL_URLS.linkedIn} target="_blank" rel="noreferrer">

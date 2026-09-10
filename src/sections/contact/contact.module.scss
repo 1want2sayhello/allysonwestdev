@@ -281,11 +281,16 @@
   box-shadow: 0 0 120px rgba($color-accent, 0.6);
 }
 
-.actions h3 {
+.actions a {
   font-size: clamp(0.95rem, 2.5vw, 1.5rem);
   text-align: center;
-  word-break: break-word;
+  color: $white;
   z-index: 20;
+  transition: 0.3s text-decoration ease-in-out;
+}
+
+.actions a:hover {
+  text-decoration: underline;
 }
 
 .socials {

@@ -51,6 +51,7 @@ const MobileNav = ({ socials }) => {
 
       <div className={styles.buttonContainer}>
         <button
+          type="button"
           className={`${styles.toggleMenu} ${isOpen ? styles.showCloseBtn : ""}`}
           onClick={toggleMenu}
         >

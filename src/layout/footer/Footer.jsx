@@ -71,8 +71,8 @@ const Footer = () => {
           <div className={styles.left}>
             <h4> &copy; {currentYear} Allyson West </h4>
           </div>
-          <div className={`${styles.right} ${styles.privacy}`}>
-            <h4> Privacy & Cookies </h4>
+          <div className={`${styles.right} ${styles.tag}`}>
+            <h4> Made with 💡 </h4>
           </div>
         </section>
       </section>
