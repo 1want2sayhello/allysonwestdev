@@ -140,7 +140,7 @@ const Hero = () => {
         <div className={styles.projectHeading}>
           <h1> Building With Intention </h1>
           <h4>
-            From real-world client work to personal builds,{" "}
+            From real-world client work to personal builds,
             <br className={styles.mobileBreak} /> I approach every project with
             the same mindset: <br /> thoughtful design, solid functionality, and
             attention to detail that shape overall user experience.

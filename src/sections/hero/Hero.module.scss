@@ -70,7 +70,7 @@
 .bulb {
   height: 100%;
   position: relative;
-  top: -35px;
+  top: -15%;
   left: 42%;
   transform: translate(-40%);
   width: 260px;
@@ -285,8 +285,8 @@
   display: flex;
   justify-content: right;
   align-items: center;
+  opacity: 0.775;
   gap: 0.8rem;
-  opacity: 0;
   margin-left: auto;
 }
 
@@ -324,15 +324,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
+  margin-top: clamp(5rem, 8vw, 8.5rem);
 }
 
 .projectIntro {
-  height: 250px;
+  min-height: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: $highlight;
+  padding-top: 8rem;
 }
 
 .projectHeading {
@@ -392,7 +393,7 @@
   }
 
   .bulb {
-    top: -115px;
+    top: -145px;
     left: 40%;
   }
 
@@ -410,15 +411,16 @@
 
   .content {
     gap: 0;
-    margin-top: 5rem;
+    margin-top: 6rem;
     grid-template-columns: 1fr;
     place-content: center;
   }
+
   .text {
     order: 1;
     justify-content: center;
     align-items: center;
-    gap: 1.6rem;
+    gap: 1.8rem;
     font-size: clamp(1.2em, 4vw, 1.25rem);
   }
 
@@ -444,8 +446,18 @@
     justify-content: center;
   }
 
+  .techStack .icon {
+    width: 25px;
+    height: 25px;
+  }
+
   .action {
     order: 3;
+    margin-top: 1rem;
+  }
+
+  .projectIntro {
+    padding-top: 8rem;
   }
 
   .mobileBreak {
