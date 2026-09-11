@@ -107,14 +107,15 @@ const Hero = () => {
       <div className={styles.content}>
         <div className={styles.text}>
           <h4>
-            <span className={styles.highlight}> Available </span> to bring your
-            next idea to life with front-end development, interface & web
-            design. <br />
-            <span className={styles.locationLabel}>
-              Based in
-              <span className={styles.highlight}> Indianapolis, IN</span>
-            </span>
+            <span className={styles.highlight}>Available </span>
+            to bring your next idea to life with front-end development,
+            interface <br className={styles.mobileBreak} /> & web design.
           </h4>
+
+          <p className={styles.locationLabel}>
+            Based in
+            <span className={styles.highlight}> Indianapolis, IN</span>
+          </p>
         </div>
         <div className={styles.action}>
           <Link to={"/#featured"} className={styles.cta}>
@@ -139,10 +140,10 @@ const Hero = () => {
         <div className={styles.projectHeading}>
           <h1> Building With Intention </h1>
           <h4>
-            From real-world client work to personal builds, I approach every
-            project with the same mindset: <br /> thoughtful design, solid
-            functionality, and attention to detail that shape overall user
-            experience.
+            From real-world client work to personal builds,{" "}
+            <br className={styles.mobileBreak} /> I approach every project with
+            the same mindset: <br /> thoughtful design, solid functionality, and
+            attention to detail that shape overall user experience.
           </h4>
         </div>
       </div>

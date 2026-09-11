@@ -4,11 +4,9 @@
   position: relative;
   width: 100%;
   isolation: isolate;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   min-height: 100vh;
 }
 
@@ -30,7 +28,6 @@
       #461c1a 72%,
       #271313 100%
     );
-
   z-index: -2;
 }
 
@@ -39,9 +36,7 @@
   inset: 0;
   position: absolute;
   background-image: url("../../assets/grain-texture.webp");
-
   background-size: 420px 420px;
-
   background-repeat: repeat;
   mix-blend-mode: soft-light;
   z-index: -1;
@@ -54,7 +49,6 @@
   left: 50%;
   transform: translate(-47%);
   width: auto;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,7 +74,6 @@
   left: 42%;
   transform: translate(-40%);
   width: 260px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,18 +85,32 @@
   width: clamp(180px, 22vw, 260px);
   height: 100%;
   object-fit: contain;
-
   transform-origin: top center;
-  animation: swing 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.bulb img {
   animation: swing 2.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .glow {
+  position: absolute;
+  width: 520px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  top: 50px;
   transform-origin: top 10%;
   animation: swing 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle,
+    rgba($white, 0.8) 0%,
+    rgba($highlight, 0.5) 20%,
+    transparent 70%
+  );
+  opacity: 0.375;
 }
 
 @keyframes swing {
@@ -136,37 +143,12 @@
   }
 }
 
-.glow {
-  position: absolute;
-  width: 520px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  top: 50px;
-}
-
-.glow::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-
-  background: radial-gradient(
-    circle,
-    rgba($white, 0.8) 0%,
-    rgba($highlight, 0.5) 20%,
-    transparent 70%
-  );
-  opacity: 0.375;
-}
-
 .dust {
   position: absolute;
   top: 220px;
   left: 40px;
-
   width: 400px;
   height: 400px;
-
   pointer-events: none;
   opacity: 0.875;
 }
@@ -175,14 +157,11 @@
   position: absolute;
   left: var(--x);
   top: var(--y);
-
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
-
   background: rgba($highlight, 0.8);
   box-shadow: 0 0 2px rgba($highlight, 0.4);
-
   animation: drift var(--duration) linear infinite;
   animation-delay: -6s;
 }
@@ -208,11 +187,9 @@
   width: 220px;
   height: 60px;
   background-color: $bg;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   cursor: pointer;
   box-shadow: 4px 6px 0 $highlight;
   border-radius: 2px;
@@ -222,8 +199,6 @@
   color: $highlight;
   text-transform: uppercase;
   font-weight: 900;
-
-  cursor: pointer;
 }
 
 .cta:hover {
@@ -234,12 +209,10 @@
 .banner {
   width: 100%;
   height: 380px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   text-align: center;
   container-type: size;
   margin-top: 4.4rem;
@@ -255,7 +228,6 @@
   text-transform: uppercase;
   white-space: nowrap;
   letter-spacing: -0.175rem;
-
   word-spacing: -20px;
   line-height: 0.94;
 }
@@ -273,7 +245,6 @@
 .content {
   width: 100%;
   flex: 1;
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -282,16 +253,25 @@
 
 .text {
   display: flex;
+  flex-direction: column;
   margin-top: 0.4rem;
 }
 
 .text h4 {
   width: 25ch;
+  margin: 0;
   text-align: left;
   font-size: clamp(1.2rem, 2vw, 1.8rem);
   font-family: $accent-font;
   color: rgba($highlight, 0.8);
   letter-spacing: 0.8px;
+}
+
+.locationLabel {
+  margin: 0;
+  font-family: $accent-font;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  color: rgba($highlight, 0.8);
 }
 
 .highlight {
@@ -307,7 +287,6 @@
   align-items: center;
   gap: 0.8rem;
   opacity: 0;
-
   margin-left: auto;
 }
 
@@ -320,13 +299,13 @@
 .techStack .icon {
   height: 40px;
   width: 40px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
-  transition: transform 0.3s ease-in-out opacity 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
 }
 
 .techStack .icon:hover {
@@ -350,12 +329,9 @@
 
 .projectIntro {
   height: 250px;
-
   display: flex;
   flex-direction: column;
-
   align-items: center;
-
   color: $highlight;
 }
 
@@ -367,7 +343,7 @@
 }
 
 .projectHeading h1 {
-  font-size: clamp(1.2rem, 5vw, 5rem);
+  font-size: clamp(1.6rem, 5vw, 5rem);
   font-family: $body-text-font;
   text-transform: uppercase;
   text-shadow: 4px 4px 0 rgba($color-accent, 0.475);
@@ -378,29 +354,35 @@
   color: $highlight;
   font-size: clamp(1rem, 2vw, 1.8rem);
   margin: 1.2rem;
-
+  line-height: 1.4;
   font-family: $header-font;
   font-weight: 500;
   text-align: center;
+  text-wrap: pretty;
+}
+
+.mobileBreak {
+  display: none;
 }
 
 /*
- MOBILE STYLING
+  MOBILE STYLING
 ============================= */
 
 @media (max-width: 760px) {
   .banner {
     height: 200px;
+    padding: 1rem;
   }
 
   .banner .heading,
   .banner .subheading {
-    font-size: calc(100cqi / 8.2);
+    font-size: calc(100cqi / 8.5);
     font-family: $body-text-font;
     text-transform: uppercase;
     white-space: nowrap;
-    letter-spacing: -2px;
-    word-spacing: 0.4px;
+    letter-spacing: -0.2px;
+    word-spacing: 0.115px;
     line-height: 1;
   }
 
@@ -410,8 +392,8 @@
   }
 
   .bulb {
-    top: -140px;
-    left: 38%;
+    top: -115px;
+    left: 40%;
   }
 
   .glow {
@@ -427,41 +409,46 @@
   }
 
   .content {
-    margin-top: 4rem;
+    gap: 0;
+    margin-top: 5rem;
     grid-template-columns: 1fr;
     place-content: center;
   }
-
   .text {
     order: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+    font-size: clamp(1.2em, 4vw, 1.25rem);
+  }
+
+  .text h4 {
+    width: min(34ch, 90%);
+    margin: 0;
+    text-align: center;
+    line-height: 1.35;
+    letter-spacing: 0.4px;
+  }
+
+  .locationLabel {
+    margin: 0;
+    text-align: center;
+    font-family: $accent-font;
+    line-height: 1.35;
   }
 
   .techStack {
     order: 2;
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
   }
 
   .action {
     order: 3;
   }
 
-  .text {
-    justify-content: center;
-    align-items: center;
-  }
-
-  .text h4 {
-    width: 30ch;
-    text-align: center;
-    letter-spacing: 0.8px;
-  }
-
-  .techStack {
-    width: 100%;
-    margin-left: 0;
-    justify-content: center;
-  }
-
-  .cta {
-    margin-top: 0.8rem;
+  .mobileBreak {
+    display: block;
   }
 }
