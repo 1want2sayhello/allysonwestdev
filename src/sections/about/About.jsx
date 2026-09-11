@@ -1,9 +1,36 @@
+import { useEffect, useRef } from "react";
 import lightIcons from "../../data/lightIcons";
 import dividerIcon from "../../assets/icons/light/divider-icon.svg";
 
 import styles from "./About.module.scss";
 
 const About = () => {
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    const elements = contentRef.current?.querySelectorAll("[data-reveal]");
+
+    if (!elements?.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.visible);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      },
+    );
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, []);
+
   const techStack = [
     {
       name: "React",
@@ -83,9 +110,9 @@ const About = () => {
         </div>
       </div>
 
-      <div className={styles.content}>
+      <div className={styles.content} ref={contentRef}>
         <div className={styles.row}>
-          <div className={styles.left}>
+          <div className={styles.left} data-reveal>
             <h3> I play matchmaker between code and design.</h3>
             <span>
               <p>
@@ -103,7 +130,7 @@ const About = () => {
         </div>
 
         <div className={styles.row}>
-          <div className={styles.right}>
+          <div className={styles.right} data-reveal>
             <h3>Front-End Foundation</h3>
             <div className={styles.techStack}>
               {techStack.map((tech) => (

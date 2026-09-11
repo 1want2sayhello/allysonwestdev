@@ -2,6 +2,10 @@ import fizzFixThumb from "../assets/thumbnails/fizz-fix-thumb.avif";
 import techTunesThumb from "../assets/thumbnails/tech-tunes-thumb.avif";
 import experienceIndyThumb from "../assets/thumbnails/map-app-thumb.avif";
 
+//Experience 317 demos
+import experienceIndyLocationDemo from "../assets/videos/experience-indy-demos/location.mp4";
+import experienceIndyFilterDemo from "../assets/videos/experience-indy-demos/location-filtering.mp4";
+
 //Fizz Fix demo videos
 import fizzIntroThumb from "../assets/videos/fizz-fix-demos/intro-thumb.mp4";
 import fizzIntroDemo from "../assets/videos/fizz-fix-demos/intro-full.mp4";
@@ -32,6 +36,7 @@ export const projects = [
   {
     id: "experience-indy",
     title: "Experience Indy Mobile Web App",
+    demoLayout: "mobile",
     isFeatured: true,
     collaborations: {
       label: "Internship Collaboration",
@@ -46,7 +51,7 @@ export const projects = [
         },
       ],
     },
-    role: ["front-end developer", "web designer", "UX Researcher"],
+    role: ["front-end developer", "web designer"],
     type: "internship",
     problem:
       "Attendees needed an easy-to-use way to discover and navigate on foot to sponsored events and businesses (including certain hotels, bars and restaurants.)",
@@ -79,6 +84,20 @@ export const projects = [
         title: "Event Themed Interface",
         description:
           "I created a cohesive color system on brand with the given event logo and Olympic ring color scheme, along with a set of custom icon markers.",
+      },
+    ],
+    demos: [
+      {
+        id: "experience-indy-location",
+        title: "Navigate downtown events & sponsored locations",
+        preview: experienceIndyLocationDemo,
+        video: experienceIndyLocationDemo,
+      },
+      {
+        id: "experience-indy-filter-locales",
+        title: "Filter different location types",
+        preview: experienceIndyFilterDemo,
+        video: experienceIndyFilterDemo,
       },
     ],
     results: [

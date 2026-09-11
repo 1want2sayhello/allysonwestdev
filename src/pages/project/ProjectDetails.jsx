@@ -90,7 +90,11 @@ const ProjectDetails = () => {
                 </div>
               </div>
 
-              <div className={`${styles.context} ${styles.demoContext}`}>
+              <div
+                className={`${styles.context} ${styles.demoContext} ${
+                  project.demoLayout === "mobile" ? styles.mobileDemos : ""
+                }`}
+              >
                 {project.demos?.map((demo) => (
                   <button
                     key={demo.id}
